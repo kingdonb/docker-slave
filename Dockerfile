@@ -21,7 +21,7 @@
 #  THE SOFTWARE.
 
 FROM openjdk:8-jdk
-MAINTAINER Nicolas De Loof <nicolas.deloof@gmail.com>
+MAINTAINER Kingdon Barrett <kingdon.b@nd.edu>
 
 ENV HOME /home/jenkins
 RUN groupadd -g 10000 jenkins
@@ -33,7 +33,8 @@ RUN curl --create-dirs -sSLo /usr/share/jenkins/slave.jar https://repo.jenkins-c
   && chmod 755 /usr/share/jenkins \
   && chmod 644 /usr/share/jenkins/slave.jar
 
-
+ADD known_hosts /home/jenkins/.ssh/known_hosts
+RUN chown -R jenkins:jenkins /home/jenkins
 USER jenkins
 RUN mkdir /home/jenkins/.jenkins
 VOLUME /home/jenkins/.jenkins
