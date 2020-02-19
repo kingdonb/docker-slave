@@ -24,7 +24,7 @@ FROM openjdk:8-jdk
 MAINTAINER Kingdon Barrett <kingdon.b@nd.edu>
 
 
-ARG VERSION=3.35
+ARG VERSION=4.0.1
 ARG user=jenkins
 ARG group=jenkins
 ARG uid=1000
